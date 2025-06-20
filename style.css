@@ -327,7 +327,6 @@ img {
   width: 100%;
   display: grid;
   grid-template-columns: auto auto auto auto;
-  grid-gap: 0px;
   padding: 0px;
   flex: none;
 }
@@ -337,6 +336,52 @@ img {
 }
 
 /* ------------- .styling av galleri ------------- */
+
+/* ------------- styling av FAQ ------------- */
+/* Custom styles for smooth transition and initial hidden state */
+.faq-section {
+  max-width: 66.66%;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--primary-color);
+  padding: 10px 0;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq-question:focus {
+  outline: none;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.faq-answer {
+  padding: 10px;
+  font-size: 1rem;
+  color: var(--dark);
+  display: none;
+}
+
+.faq-question.active .icon {
+  content: "-";
+}
+/* ------------- .styling av FAQ ------------- */
 
 
 /* ------------- justerbara boxar för att få sidan responsiv ------------- */

@@ -8,79 +8,27 @@ function closeNav() {
     document.getElementById("myNav").style.width = "0%";
   }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const carousel = document.querySelector(".carousel");
-    const arrowBtns = document.querySelectorAll(".wrapper i");
-    const wrapper = document.querySelector(".wrapper");
+/*drop-down meny för ofta ställda frågor*/
+document.addEventListener("DOMContentLoaded", () => { // Changed "DomContentLoader" to "DOMContentLoaded"
+    const questions = document.querySelectorAll(".faq-question"); // Changed 'question' to 'questions' for clarity as it's a NodeList
 
-    const firstCard = carousel.querySelector(".card");
-    const firstCardWidth = firstCard.offsetWidth;
+    questions.forEach(question => {
+        question.addEventListener("click", () => {
+            // Toggle the 'active' class on the question button
+            question.classList.toggle("active");
 
-    let isDragging = false,
-        startX,
-        startScrollLeft,
-        timeoutId;
+            // Get the answer and the icon related to this specific question
+            const answer = question.nextElementSibling;
+            const icon = question.querySelector(".icon");
 
-    const dragStart = (e) => { 
-        isDragging = true;
-        carousel.classList.add("dragging");
-        startX = e.pageX;
-        startScrollLeft = carousel.scrollLeft;
-    };
-
-    const dragging = (e) => {
-        if (!isDragging) return;
-    
-        // Calculate the new scroll position
-        const newScrollLeft = startScrollLeft - (e.pageX - startX);
-    
-        // Check if the new scroll position exceeds 
-        // the carousel boundaries
-        if (newScrollLeft <= 0 || newScrollLeft >= 
-            carousel.scrollWidth - carousel.offsetWidth) {
-            
-            // If so, prevent further dragging
-            isDragging = false;
-            return;
-        }
-    
-        // Otherwise, update the scroll position of the carousel
-        carousel.scrollLeft = newScrollLeft;
-    };
-
-    const dragStop = () => {
-        isDragging = false; 
-        carousel.classList.remove("dragging");
-    };
-
-    const autoPlay = () => {
-    
-        // Return if window is smaller than 800
-        if (window.innerWidth < 800) return; 
-        
-        // Calculate the total width of all cards
-        const totalCardWidth = carousel.scrollWidth;
-        
-        // Calculate the maximum scroll position
-        const maxScrollLeft = totalCardWidth - carousel.offsetWidth;
-        
-        // If the carousel is at the end, stop autoplay
-        if (carousel.scrollLeft >= maxScrollLeft) return;
-    };
-
-    carousel.addEventListener("mousedown", dragStart);
-    carousel.addEventListener("mousemove", dragging);
-    document.addEventListener("mouseup", dragStop);
-    wrapper.addEventListener("mouseenter", () => 
-        clearTimeout(timeoutId));
-    wrapper.addEventListener("mouseleave", autoPlay);
-
-    // Add event listeners for the arrow buttons to 
-    // scroll the carousel left and right
-    arrowBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            carousel.scrollLeft += btn.id === "left" ? 
-                -firstCardWidth : firstCardWidth;
+            // Toggle the display of the answer
+            if (answer.style.display === "block") { // Use strict equality
+                answer.style.display = "none";
+                icon.textContent = "+";
+            } else {
+                answer.style.display = "block";
+                icon.textContent = "-";
+            }
         });
     });
 });
