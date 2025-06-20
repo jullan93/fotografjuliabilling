@@ -30,6 +30,7 @@
     text-align: center;
   }
 
+
   a {
     text-decoration: none;
   }
@@ -69,6 +70,32 @@
     border-top: 2px solid var(--primary-color);
   }
   /* .Solid border - seperator */
+
+  /* vertical border - seperator */
+  .vertical-line1 {
+    border-left: 1px solid var(--secondary-color); /* Adjust color and thickness as needed */
+    height: 298px; /* Adjust height as needed */
+    margin: 0 auto; /* Optional: for centering */
+  }
+
+  .vertical-line2 {
+    border-left: 1px solid var(--secondary-color); /* Adjust color and thickness as needed */
+    height: 244.5px; /* Adjust height as needed */
+    margin: 0 auto; /* Optional: for centering */
+  }
+
+  .vertical-line3 {
+    border-left: 1px solid var(--secondary-color); /* Adjust color and thickness as needed */
+    height: 156.5px; /* Adjust height as needed */
+    margin: 0 auto; /* Optional: for centering */
+  }
+
+  .vertical-line4 {
+    border-left: 1px solid var(--secondary-color); /* Adjust color and thickness as needed */
+    height: 225.5px; /* Adjust height as needed */
+    margin: 0 auto; /* Optional: for centering */
+  }
+  /* .vertical border - seperator */
 
   /* Container med information */
   .container-info {
