@@ -95,6 +95,18 @@
     height: 225.5px; /* Adjust height as needed */
     margin: 0 auto; /* Optional: for centering */
   }
+
+  .vertical-line5 {
+    border-left: 1px solid var(--secondary-color); /* Adjust color and thickness as needed */
+    height: 96.5px; /* Adjust height as needed */
+    margin: 0 auto; /* Optional: for centering */
+  }
+
+  .vertical-line6 {
+    border-left: 1px solid var(--secondary-color); /* Adjust color and thickness as needed */
+    height: 61.5px; /* Adjust height as needed */
+    margin: 0 auto; /* Optional: for centering */
+  }
   /* .vertical border - seperator */
 
   /* Container med information */
